@@ -5,6 +5,7 @@ function salvar(senha1, senha2) {
 	if(senha.value != confirmaSenha.value) {
 		alert('Senhas são diferentes');
 	}
+	$('#msg').css("display", "block");
 }
 
 function atualizarCidades(paramEstado, paramCidade) {

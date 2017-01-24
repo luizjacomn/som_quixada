@@ -17,10 +17,15 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-datepicker.css">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap-select.min.css">
 
+
 </head>
 <body>
 <div class="container-fluid" style="padding-top: 20px">
 	<div>
+	<div id="msg" style="display: none" class="alert alert-success alert-dismissable fade in">
+		<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+ 		 Cliente salvo com sucesso.
+	</div>
 		<form class="form-inline">
 			<div class="panel panel-default">
 				<div class="panel-heading">
@@ -102,7 +107,7 @@
 					<br/>
 					<br/>
 
-					<button type="submit" onclick="salvar('senha', 'confirma-senha')" class="btn btn-primary">Salvar</button>
+					<button type="button" onclick="salvar('senha', 'confirma-senha')" class="btn btn-primary">Salvar</button>
 					<button type="reset" class="btn btn-warning">Limpar</button>
 					<label class="texto-campo-obrigatorio">* Campos obrigatórios</label> 
 				</div>
