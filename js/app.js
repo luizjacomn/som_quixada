@@ -1,11 +1,108 @@
+var corpoTabela = document.querySelector("tbody");
+var botaoSalvar = document.querySelector("#salvar");
+var botaoReset= document.querySelector("#botaoReset");
+var campoSenha = document.querySelector("#senha");
+var campoConfirmaSenha = document.querySelector("#confirma-senha");
+var campoNome = document.querySelector("#nome");
+var campoEmail = document.querySelector("#email");
+var campoDataNascimento = document.querySelector("#data_nascimento");
 
-function salvar(senha1, senha2) {
-	var senha = document.getElementById(senha1);
-	var confirmaSenha = document.getElementById(senha2);
-	if(senha.value != confirmaSenha.value) {
-		alert('Senhas são diferentes');
+function esconderMsgSucesso() {
+	$('#msg-sucesso').fadeOut();
+}
+
+function esconderMsgErroCampos() {
+	$('#msg-erro-campos').fadeOut();
+}
+
+function esconderMsgErro() {
+	$('#msg-erro').fadeOut();
+}
+
+function esconderMsgErroEmail() {
+	$('#msg-erro-email').fadeOut();
+}
+
+function Cliente(nome, email, dataNascimento) {
+	this.nome = nome;
+	this.email = email;
+	this.dataNascimento = dataNascimento;
+};
+
+Cliente.prototype.toString = function() {
+	return this.nome + " - " + this.email + " - " + this.dataNascimento;
+};
+
+function salvar(event) {
+	event.preventDefault();
+	var senha = campoSenha.value;
+	var confirmaSenha = campoConfirmaSenha.value;
+	var nome = campoNome.value;
+	var email = campoEmail.value;
+	var dataNascimento = campoDataNascimento.value;
+	if(validaTodos(nome, email, dataNascimento, senha, confirmaSenha)) {
+		if(validarSenha(senha, confirmaSenha)) {
+			cliente = new Cliente(nome, email, dataNascimento);
+			adicionarValoresTabela(cliente);
+			$('#msg-sucesso').show();
+		}
 	}
-	$('#msg').css("display", "block");
+}
+
+
+function validarSenha(senha, confirmaSenha) {
+	if(senha != confirmaSenha) {
+		$('#msg-erro').show();
+		campoSenha.focus();
+		return false;
+	} 
+	return true;
+}
+
+function validaTodos(nome, email, dataNascimento, senha, confirmaSenha) {
+	var campos = [nome, email, dataNascimento, senha, confirmaSenha];
+	for(var campo in campos) {
+		if(campos[campo] == "") {
+			$('#msg-erro-campos').show();
+			return false;
+		}
+	}
+	if(!checarEmail()) {
+		return false;
+	}
+	return true;
+}
+
+function checarEmail(){
+if( campoEmail.value=="" 
+   || campoEmail.value.indexOf('@')==-1 
+     || campoEmail.value.indexOf('.')==-1 )
+	{
+	   $('#msg-erro-email').show();
+	   return false;
+	}
+	return true;
+}
+
+function adicionarValoresTabela(cliente) {
+	var linha = document.createElement("tr");
+	var campoNome = document.createElement("td");
+	var campoEmail = document.createElement("td");
+	var campoDataNascimento = document.createElement("td");
+
+	var textoNome = document.createTextNode(cliente.nome);
+	var textoEmail = document.createTextNode(cliente.email);
+	var textoDataNascimento = document.createTextNode(cliente.dataNascimento);
+
+	campoNome.appendChild(textoNome);
+	campoEmail.appendChild(textoEmail);
+	campoDataNascimento.appendChild(textoDataNascimento);
+	linha.appendChild(campoNome);
+	linha.appendChild(campoEmail);
+	linha.appendChild(campoDataNascimento);
+
+	corpoTabela.appendChild(linha);
+
 }
 
 function atualizarCidades(paramEstado, paramCidade) {
@@ -37,3 +134,10 @@ function adicionarCidades(opcoesArray, cidade) {
 	}
 	$('.selectpicker').selectpicker('refresh');
 }
+
+function resetEstadoCidade() {
+	$('.selectpicker').selectpicker('refresh');
+}
+
+botaoSalvar.addEventListener('click', salvar);
+botaoReset.addEventListener('click', resetEstadoCidade);
