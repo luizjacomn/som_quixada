@@ -1,37 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
 
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
 
-    <title>Heroic Features - Start Bootstrap Template</title>
+    <title>:: Home | Som Quixadá ::</title>
 
-    <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="css/heroic-features.css" rel="stylesheet">
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- jjljrj -->
 </head>
 
 <body>
 
-    <!-- Navigation -->
+    <!-- Barra de Navegação -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
+
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
@@ -39,113 +27,187 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Start Bootstrap</a>
+                <a class="navbar-brand" href="index.html">Som Quixadá</a>
             </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
+
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">About</a>
+                        <a onclick="toClientes()"><i class="fa fa-users"></i> Clientes</a>
                     </li>
                     <li>
-                        <a href="#">Services</a>
+                        <a onclick="toDvds()"><i class="fa fa-dot-circle-o"></i> DVDs</a>
                     </li>
                     <li>
-                        <a href="#">Contact</a>
+                        <a href="login.html"><i class="fa fa-sign-out"></i> Logout</a>
                     </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
-        <!-- /.container -->
     </nav>
 
-    <!-- Page Content -->
+    <!-- Conteúdo -->
     <div class="container">
 
-        <!-- Jumbotron Header -->
-        <header class="jumbotron hero-spacer">
-            <h1>A Warm Welcome!</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
-            <p><a class="btn btn-primary btn-large">Call to action!</a>
-            </p>
-        </header>
+      <!-- Apresentação -->
+      <header class="jumbotron hero-spacer">
+          <h1><i class="fa fa-star"></i> Apresentação</h1>
+          <p>A loja <strong>Som Quixadá</strong> é líder de vendas online no Sertão Central cearense. Aqui você encontra os últimos lançamentos dos maiores e melhores artitas nacionais e internacionais.</p>
+          <p><a class="btn btn-success-pet btn-large"><i class="fa fa-eye"></i> Ver produtos!</a>
+          </p>
+      </header>
+
+      <hr>
+
+      <!-- Novidades -->
+      <div class="row">
+          <div class="col-lg-12">
+              <h2>Novidades</h2>
+          </div>
+      </div>
+      <!-- /.row -->
+
+      <div class="row text-center">
+
+          <div class="col-md-3 col-sm-6 hero-feature">
+              <div class="thumbnail">
+                  <img src="images/limao.jpg" alt="">
+                  <div class="caption">
+                      <h3>Limão com Mel</h3>
+                      <p>Paixão x paixão</p>
+                      <p>
+                          <a href="#" class="btn btn-success-pet">Comprar!</a>
+                      </p>
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-md-3 col-sm-6 hero-feature">
+              <div class="thumbnail">
+                  <img src="images/lagosta.jpg" alt="">
+                  <div class="caption">
+                      <h3>Lagosta Bronzeada</h3>
+                      <p>O bronze do sucesso - ao vivo</p>
+                      <p>
+                          <a href="#" class="btn btn-success-pet">Comprar!</a>
+                      </p>
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-md-3 col-sm-6 hero-feature">
+              <div class="thumbnail">
+                  <img src="images/zeze-2.jpg" alt="">
+                  <div class="caption">
+                      <h3>Zezé & Luciano</h3>
+                      <p>Sempre que eu respiro é por você</p>
+                      <p>
+                          <a href="#" class="btn btn-success-pet">Comprar!</a>
+                          <!-- <a href="#" class="btn btn-default">+ info</a> -->
+                      </p>
+                  </div>
+              </div>
+          </div>
+
+          <div class="col-md-3 col-sm-6 hero-feature">
+              <div class="thumbnail">
+                  <img src="images/ivete.jpg" alt="">
+                  <div class="caption">
+                      <h3>Ivete Sangalo</h3>
+                      <p>Ao vivo no Maraca</p>
+                      <p>
+                          <a href="#" class="btn btn-success-pet">Comprar!</a>
+                      </p>
+                  </div>
+              </div>
+          </div>
+
+      </div>
+      <!-- /.row -->
+
+      <hr>
+
+      <!-- Mais tocadas -->
+      <div class="row">
+          <div class="col-lg-12">
+              <h2>Mais Tocadas (TOP 3)</h2>
+          </div>
+      </div>
+      <!-- /.row -->
+
+      <div class="media">
+          <div class="media-left">
+              <a href="#">
+                  <img class="media-object" src="images/zeze.jpg" alt="">
+              </a>
+          </div>
+          <div class="media-body">
+              <h4 class="media-heading borda-inferior"><strong style="color: #27897b">1º Lugar</strong></h4>
+              <p><i class="fa fa-user"></i><strong> Artista: </strong> Zezé Di Camargo & Luciano</p>
+              <p><i class="fa fa-window-maximize"></i><strong> Álbum: </strong> Sempre que eu respiro é por você</p>
+              <p><i class="fa fa-music"></i><strong> Música: </strong> Sufocado</p>
+
+              <audio controls>
+                        <source src="sounds/sufocado.mp3" type="audio/mpeg">
+              </audio>
+          </div>
+      </div>
+
+      <hr>
+
+      <div class="media">
+          <div class="media-left">
+              <a href="#">
+                  <img class="media-object" src="images/limao.jpg" alt="">
+              </a>
+          </div>
+          <div class="media-body">
+              <h4 class="media-heading borda-inferior"><strong style="color: #27897b">2º Lugar</strong></h4>
+              <p><i class="fa fa-user"></i><strong> Artista: </strong> Limão com Mel</p>
+              <p><i class="fa fa-window-maximize"></i><strong> Álbum: </strong> Paixão x paixão</p>
+              <p><i class="fa fa-music"></i><strong> Música: </strong> Paixão x paixão</p>
+
+              <audio controls>
+                        <source src="sounds/paixao-x-paixao.mp3" type="audio/mpeg">
+              </audio>
+          </div>
+      </div>
+
+      <hr>
+
+      <div class="media">
+          <div class="media-left">
+              <a href="#">
+                  <img class="media-object" src="images/lagosta-2.jpg" alt="">
+              </a>
+          </div>
+          <div class="media-body">
+              <h4 class="media-heading borda-inferior"><strong style="color: #27897b">3º Lugar</strong></h4>
+              <p><i class="fa fa-user"></i><strong> Artista: </strong> Lagosta Bronzeada</p>
+              <p><i class="fa fa-window-maximize"></i><strong> Álbum: </strong> O bronze do sucesso - ao vivo</p>
+              <p><i class="fa fa-music"></i><strong> Música: </strong> Louca de saudade</p>
+
+              <audio controls>
+                        <source src="sounds/louca-de-saudade.mp3" type="audio/mpeg">
+              </audio>
+          </div>
+      </div>
+      <!-- /.row -->
 
         <hr>
 
-        <!-- Title -->
-        <div class="row">
-            <div class="col-lg-12">
-                <h3>Latest Features</h3>
-            </div>
-        </div>
-        <!-- /.row -->
-
-        <!-- Page Features -->
-        <div class="row text-center">
-
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3>Feature Label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3>Feature Label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3>Feature Label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <img src="http://placehold.it/800x500" alt="">
-                    <div class="caption">
-                        <h3>Feature Label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Buy Now!</a> <a href="#" class="btn btn-default">More Info</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <!-- /.row -->
-
-        <hr>
-
-        <!-- Footer -->
+        <!-- Rodapé -->
         <footer>
             <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
+                <div class="col-lg-7 float-left">
+                    <p>Todos os direitos reservados &copy; - Som Quixadá - 2017</p>
+                    <p>Josimar Junior - Luiz Jacó - Rafael Monteiro</p>
+                </div>
+                <div class="col-lg-5 float-right">
+                    <p><i class="fa fa-instagram" /></i> Instagram: <a href="https://instagram.com" target="_blank">instagram.com/som_quixada</a></p>
+                    <p><i class="fa fa-facebook" /></i> Facebook: <a href="https://facebook.com" target="_blank">facebook.com/som_quixada</a></p>
+                    <p><i class="fa fa-twitter" /></i> Twitter: <a href="https://twitter.com" target="_blank">twitter.com/som_quixada</a></p>
                 </div>
             </div>
         </footer>
@@ -156,7 +218,7 @@
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
+    <!-- Bootstrap JS -->
     <script src="js/bootstrap.min.js"></script>
 
 </body>

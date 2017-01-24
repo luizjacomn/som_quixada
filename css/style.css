@@ -8,7 +8,110 @@
 }
 
 .texto-campo-obrigatorio {
-	color:red; 
+	color:red;
 	float: right;
 	padding-right: 10px;
+}
+
+body {
+    padding-top: 70px;
+}
+
+.hero-spacer {
+    margin-top: 50px;
+}
+
+.hero-feature {
+    margin-bottom: 30px;
+}
+
+footer {
+    margin: 50px 0;
+		color: #27897b;
+}
+
+.borda-inferior {
+		border-bottom: 2px solid #eee;
+}
+
+.thumbnail > img {
+	height: 180px;
+	width: 250px;
+}
+
+.media-left > a > img {
+	height:150px;
+	width: 100px;
+}
+
+h1 > i {
+	color: rgb(244, 222, 24);
+}
+
+.float-left {
+	float: left;
+	text-align: left;
+}
+
+.float-right {
+	float: right;
+	text-align: right;
+}
+
+.btn-success-pet {
+  color: #fff;
+  background-color: #27897b;
+  border-color: #00897b;
+}
+.btn-success-pet:focus,
+.btn-success-pet.focus {
+  color: #fff;
+  background-color: #004D40;
+  border-color: #00897b;
+}
+.btn-success-pet:hover {
+  color: #fff;
+  background-color: #004D40;
+  border-color: #00897b;
+}
+.btn-success-pet:active,
+.btn-success-pet.active,
+.open > .dropdown-toggle.btn-success-pet {
+  color: #fff;
+  background-color: #004D40;
+  border-color: #00897b;
+}
+.btn-success-pet:active:hover,
+.btn-success-pet.active:hover,
+.open > .dropdown-toggle.btn-success-pet:hover,
+.btn-success-pet:active:focus,
+.btn-success-pet.active:focus,
+.open > .dropdown-toggle.btn-success-pet:focus,
+.btn-success-pet:active.focus,
+.btn-success-pet.active.focus,
+.open > .dropdown-toggle.btn-success-pet.focus {
+  color: #fff;
+  background-color: #204d74;
+  border-color: #00897b;
+}
+.btn-success-pet:active,
+.btn-success-pet.active,
+.open > .dropdown-toggle.btn-success-pet {
+  background-image: none;
+}
+.btn-success-pet.disabled:hover,
+.btn-success-pet[disabled]:hover,
+fieldset[disabled] .btn-success-pet:hover,
+.btn-success-pet.disabled:focus,
+.btn-success-pet[disabled]:focus,
+fieldset[disabled] .btn-success-pet:focus,
+.btn-success-pet.disabled.focus,
+.btn-success-pet[disabled].focus,
+fieldset[disabled] .btn-success-pet.focus {
+  background-color: #27897b;
+  border-color: #00897b;
+}
+.btn-success-pet .badge {
+  color: #27897b;
+  background-color: #fff;
 }

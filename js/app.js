@@ -36,3 +36,14 @@ function adicionarCidades(opcoesArray, cidade) {
 	}
 	$('.selectpicker').selectpicker('refresh');
 }
+
+function login() {
+	var login = document.getElementById("login").value;
+	var senha = document.getElementById("pass").value;
+	if(login === "admin" && senha === "123456") {
+		window.location.href = "index.html";
+	} else {
+		window.location.href = "login.html";
+		alert("Login ou senha inválidos!");
+	}
+}
