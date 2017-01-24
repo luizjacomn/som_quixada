@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<title>Clientes</title>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap-datepicker.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap-datepicker.pt-BR.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mask.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap-select.min.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-datepicker.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-select.min.css">
+
+</head>
+<body>
+<div class="container-fluid" style="padding-top: 20px">
+	<div>
+		<form class="form-inline">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					Clientes
+				</div>
+				<div class="panel-body">
+					<div class="row" style="padding-left: 10px">
+
+					<div class="form-group">
+						<label for="nome">Nome:</label><label class="campo-obrigatorio">*</label> <br/>
+						<input type="nome" class="form-control" id="nome" placeholder="Digite seu nome..." size="30" required oninvalid="this.setCustomValidity('Nome é obrigatório')" onchange="try{setCustomValidity('')}catch(e){}">
+					</div>
+
+					<div class="form-group">
+						<label for="email">Email:</label><label class="campo-obrigatorio">*</label>  <br/>
+						<div class="input-group">
+ 							<span class="input-group-addon" id="basic-addon1">@</span>
+  							<input type="text" class="form-control" id="email" placeholder="teste@gmail.com" aria-describedby="basic-addon1" size="30" required oninvalid="this.setCustomValidity('Email é obrigatório, exemplo: teste@gmail.com')" onchange="try{setCustomValidity('')}catch(e){}" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="data_nascimento">Data de Nascimento:</label><label class="campo-obrigatorio">*</label>  <br/>
+						<input type="text" class="form-control" id="data_nascimento" placeholder="dia/mes/ano" size="30" required oninvalid="this.setCustomValidity('Data de nascimento é obrigatório')" onchange="try{setCustomValidity('')}catch(e){}" pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}$">
+					</div>
+					</div>
+					<div class="row" style="padding-left: 10px">
+					<div class="form-group">
+						<label for="endereco">Endereço:</label> <br/>
+						<input type="text" class="form-control" id="endereco" placeholder="Digite seu endereço..." size="30">
+					</div>
+
+					<div class="form-group">
+						<label for="cep">CEP:</label> <br/>
+						<input type="text" class="form-control" id="cep" placeholder="99999-999" size="37">
+					
+					</div>
+					<div class="form-group">
+						<label for="estado">Estado:</label> <br/>
+						<select id="estado" name="estado" class="selectpicker" data-live-search="true" title="Selecione" onchange="atualizarCidades(this.id, 'cidade')">
+						
+						  <option value="ceara">Ceará</option>
+						  <option value="rio_de_janeiro">Rio de Janeiro</option>
+						</select>
+
+					
+					</div>
+					<div class="form-group">
+						<label for="cidade">Cidade:</label> <br/>
+						<select id="cidade" name="cidade" class="selectpicker" data-live-search="true" title="Selecione">
+							
+						</select>
+					
+					</div>
+					<br/>
+					<div class="form-group">
+						<label for="prefe_musicais">Preferências Musicais:</label> <br/>
+						<label class="checkbox-inline"><input type="checkbox" value="">Rock</label>
+						<label class="checkbox-inline"><input type="checkbox" value="">Pop</label>
+						<label class="checkbox-inline"><input type="checkbox" value="">Samba</label>
+						<label class="checkbox-inline"><input type="checkbox" value="">Axé</label>
+						<label class="checkbox-inline"><input type="checkbox" value="">Clássico</label>
+						<label class="checkbox-inline"><input type="checkbox" value="">Forró</label>
+					</div>
+					<br/>
+					<div class="form-group">
+						<label for="senha">Senha:</label><label class="campo-obrigatorio">*</label>  <br/>
+						<input type="password" class="form-control" id="senha" size="30" required oninvalid="this.setCustomValidity('Senha é obrigatório')" onchange="try{setCustomValidity('')}catch(e){}">
+					
+					</div>
+					<div class="form-group">
+						<label for="confirma-senha">Confirmar Senha:</label><label class="campo-obrigatorio">*</label>  <br/>
+						<input type="password" class="form-control" id="confirma-senha" size="30" required 
+						oninvalid="this.setCustomValidity('Confirmar senha é obrigatório)" onchange="try{setCustomValidity('')}catch(e){}">
+					
+					</div>
+
+					<br/>
+					<br/>
+					<br/>
+
+					<button type="submit" onclick="salvar('senha', 'confirma-senha')" class="btn btn-primary">Salvar</button>
+					<button type="reset" class="btn btn-warning">Limpar</button>
+					<label class="texto-campo-obrigatorio">* Campos obrigatórios</label> 
+				</div>
+
+			</div>
+		</form>
+	</div>
+	</div>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			$('#data_nascimento').mask('00/00/0000');
+			$('#cep').mask('00000-000');
+
+			$('#data_nascimento').datepicker({
+				format: 'dd/mm/yyyy',
+				language: 'pt-BR',
+				startView: true,
+				todayHighlight: true,
+				autoclose: true
+			});
+		});
+	</script>
+</body>
+</html> 
